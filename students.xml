@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student id="21-10719">
+        <name>Jorlyn Faith G. Goña</name>
+        <age>21</age>
+        <course> Bachelor of Science in Information Technology</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> faithgranadino@gmail.com </email>
+    </student>
+    <student id="21-54621">
+        <name>Tricia Boco</name>
+        <age>20</age>
+        <course>Bachelor of Science in Information Technology</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> triciaboco@gmail.com </email>
+    </student>
+    <student id="21-87953">
+        <name>Geselle Goboli</name>
+        <age>23</age>
+        <course>Bachelor of Science in Information Technology</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> gesellegoboli@gmail.com </email>
+    </student>
+    <student id="21-87912">
+        <name>Sherlyn Bayoca</name>
+        <age>20</age>
+        <course>Bachelor of Science in Information System</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> sherlynbayoca@gmail.com </email>
+    </student>
+    <student id="21-87978">
+        <name>Lyka Gestiada</name>
+        <age>21</age>
+        <course>Bachelor of Science in Information System</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> lykagestiada@gmail.com </email>
+    </student>
+    <student id="21-87990">
+        <name>Krislyn Berania</name>
+        <age>23</age>
+        <course>Bachelor of Science in Information System</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> krislynberania@gmail.com </email>
+    </student>
+    <student id="21-87956">
+        <name>Jayvee Genavia</name>
+        <age>22</age>
+        <course>Bachelor of Science in Information System</course>
+        <year> 4th year </year>
+        <block> 2 </block>
+        <email> jayveegenavia@gmail.com </email>
+    </student>
+</students>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSIT STUDENTS</title>
+    <style>
+        .student {
+            border: 1px solid #bf2727;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>BSIT STUDENTS ENROLLED IN SYSTEM INTEGRATION AND ARCHITECTURE 2</h1>
+<div id="student-list"></div>
+
+<script>
+fetch('students.xml')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();  
+    })
+    .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'application/xml');
+        const parserError = xmlDoc.querySelector('parsererror');
+        if (parserError) {
+            throw new Error('Error parsing XML: ' + parserError.textContent);
+        }
+        const students = xmlDoc.getElementsByTagName('student');
+        const studentListDiv = document.getElementById('student-list');
+        
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            const studentId = student.getAttribute('id');
+            const name = student.getElementsByTagName('name')[0].textContent;
+            const age = student.getElementsByTagName('age')[0].textContent;
+            const course = student.getElementsByTagName('course')[0].textContent;
+            const year = student.getElementsByTagName('year')[0].textContent;
+            const block = student.getElementsByTagName('block')[0].textContent;
+            const email = student.getElementsByTagName('email')[0].textContent;
+            const studentDiv = document.createElement('div');
+            studentDiv.classList.add('student');
+            studentDiv.innerHTML = `
+                <p><strong>Student ID:</strong> ${studentId}</p>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Course:</strong> ${course}</p>
+                <p><strong>Year:</strong> ${year}</p>
+                <p><strong>Block:</strong> ${block}</p>
+                <p><strong>Email:</strong> ${email}</p>
+            `;
+            studentListDiv.appendChild(studentDiv);
+        }
+    })
+    .catch(error => {
+        console.error('Error loading or parsing the XML file:', error);
+        document.getElementById('student-list').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+    });
+</script>
+
+</body>
+</html>
